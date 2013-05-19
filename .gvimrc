@@ -1,4 +1,4 @@
-No audible bell
+" No audible bell
 set vb
 
 " No toolbar
