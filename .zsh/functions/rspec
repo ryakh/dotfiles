@@ -1,6 +1,6 @@
-irspec() {
+rspec() {
   if [ -S .zeus.sock ]; then
-    zeus rspec "$@"
+    zeus test spec "$@"
   else
     command rspec "$@"
   fi
