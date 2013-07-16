@@ -127,6 +127,7 @@ nnoremap <C-l> <C-w>l
 " Swiftier buffer navigation
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
