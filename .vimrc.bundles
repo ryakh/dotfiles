@@ -27,6 +27,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'mattn/zencoding-vim'
+Bundle 'bling/vim-airline'
 
 filetype on
 
