@@ -71,7 +71,7 @@ set foldlevel=1
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=6
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -137,6 +137,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
+
+" Better saving
+map <Leader>w :w<cr>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
