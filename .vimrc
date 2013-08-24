@@ -62,6 +62,8 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Airline config
 let g:airline_theme='solarized'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " Folding
 set foldmethod=indent
