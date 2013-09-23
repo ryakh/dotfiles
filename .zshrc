@@ -72,3 +72,6 @@ setopt EXTENDED_GLOB
 # rbenv caveeat
 eval "$(rbenv init -)"
 
+# Disable pesky autocorrect
+alias vagrant='nocorrect vagrant '
+

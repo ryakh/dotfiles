@@ -65,12 +65,6 @@ let g:airline_theme='solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-" Folding
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
-
 " Numbers
 set number
 set numberwidth=6
