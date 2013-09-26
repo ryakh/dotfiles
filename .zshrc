@@ -63,15 +63,13 @@ setopt AUTOCD
 setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
 setopt cdablevars
 
-# Try to correct command line spelling
-setopt CORRECT CORRECT_ALL
+# Try not to correct command line spelling
+unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
 # rbenv caveeat
 eval "$(rbenv init -)"
-
-# Disable pesky autocorrect
-alias vagrant='nocorrect vagrant '
+export PATH="$HOME/.rbenv/bin:$PATH"
 

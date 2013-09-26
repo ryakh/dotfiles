@@ -52,6 +52,9 @@ if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+" Ignore Rails tmp directory
+set wildignore+=*/tmp/*
+
 " Color scheme
 syntax enable
 set background=dark
