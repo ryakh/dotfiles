@@ -27,6 +27,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
+Bundle 'ryakh/bufkill.vim'
 
 filetype on
 

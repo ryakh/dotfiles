@@ -1,11 +1,15 @@
 #!/bin/bash
 
+EXCLUDE=("install.sh", "terminal", "git")
+
 shopt -s dotglob
 
 for dotfile in *
 
 do
-  if [ $dotfile != "install.sh" ]; then
+  if [[ ${EXCLUDE[*]} =~ $dotfile ]]; then
+    echo "$dotfile will not be simlinked!"
+  else
     if [ -L "$HOME/$dotfile" ]; then
       ln -sfn "$PWD/$dotfile" "$HOME/$dotfile"
     else
@@ -20,4 +24,3 @@ fi
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim -u ~/.vimrc.bundles +BundleInstall +qa
-
