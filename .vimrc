@@ -150,3 +150,20 @@ let g:syntastic_check_on_open=1
 " let CtrlP search for dotfiles and hidden files
 let g:ctrlp_show_hidden=1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE (thanks Gary Bernhardt)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+
+map <Leader>n :call RenameFile()<cr>
+
+" Remove trailing whitespace on save for ruby files.
+au BufWritePre *.rb :%s/\s\+$//e
