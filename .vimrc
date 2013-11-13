@@ -150,6 +150,11 @@ let g:syntastic_check_on_open=1
 " let CtrlP search for dotfiles and hidden files
 let g:ctrlp_show_hidden=1
 
+" the folding
+set foldmethod=indent
+set foldcolumn=4
+set nofoldenable
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
