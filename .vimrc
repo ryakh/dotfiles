@@ -48,7 +48,7 @@ set expandtab
 set colorcolumn=80
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=nbsp:¬,tab:»·,trail:·
 
 " Use Ag (https://github.com/ggreer/the_silver_searcher) instead of Grep when
 " available
