@@ -1,2 +1,0 @@
-cat /dev/null > log/development.log
-cat /dev/null > log/test.log
