@@ -26,6 +26,8 @@ Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
 Bundle 'ryakh/bufkill.vim'
 Bundle 'juvenn/mustache.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/syntastic'
 
 filetype on
 
