@@ -47,6 +47,9 @@ set expandtab
 " Display vertical ruler
 set colorcolumn=80
 
+" Autoexpand HBS brackets
+let g:mustache_abbreviations = 1
+
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 

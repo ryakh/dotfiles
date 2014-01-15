@@ -25,6 +25,7 @@ Bundle 'xenoterracide/html.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
 Bundle 'ryakh/bufkill.vim'
+Bundle 'juvenn/mustache.vim'
 
 filetype on
 
