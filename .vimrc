@@ -63,7 +63,7 @@ endif
 set wildignore+=*/tmp/*
 
 " Exuction of current ruby buffer
-nnoremap <Leader>r :!clear; ruby %<cr>
+nnoremap <Leader>r :!clear; ruby %<CR>
 
 " Color scheme
 syntax enable
@@ -116,9 +116,9 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
-nnoremap <Leader>t :clear; call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :clear; call RunNearestSpec()<CR>
-nnoremap <Leader>l :clear; call RunLastSpec()<CR>
+let g:vroom_map_keys = 0
+silent! map <unique> <Leader>t :VroomRunTestFile<CR>
+silent! map <unique> <Leader>s :VroomRunNearestTest<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -148,7 +148,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Better saving
-map <Leader>w :w<cr>
+map <Leader>w :w<CR>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
