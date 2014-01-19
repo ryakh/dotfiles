@@ -1,6 +1,6 @@
 [user]
   name = Ruslan Yakhyaev
-  email = ruslan@ruslan.sk
+	email = ruslan@ruslan.io
 
 [push]
   default = upstream

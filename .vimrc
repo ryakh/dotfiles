@@ -62,10 +62,13 @@ endif
 " Ignore Rails tmp directory
 set wildignore+=*/tmp/*
 
+" Exuction of current ruby buffer
+nnoremap <Leader>r :!clear; ruby %<cr>
+
 " Color scheme
 syntax enable
 set background=dark
-let g:solarized_contrast="medium"
+let g:solarized_contrast="high"
 colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -113,9 +116,9 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>t :clear; call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :clear; call RunNearestSpec()<CR>
+nnoremap <Leader>l :clear; call RunLastSpec()<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
