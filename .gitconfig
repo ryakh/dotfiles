@@ -1,6 +1,6 @@
 [user]
   name = Ruslan Yakhyaev
-	email = ruslan@ruslan.io
+  email = ruslan@ruslan.io
 
 [push]
   default = upstream
@@ -27,4 +27,3 @@
 
 [merge]
     ff = only
-

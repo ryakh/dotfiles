@@ -29,6 +29,7 @@ Bundle 'ryakh/bufkill.vim'
 Bundle 'juvenn/mustache.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
+Bundle 'rking/ag.vim'
 
 filetype on
 
