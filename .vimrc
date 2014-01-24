@@ -10,6 +10,9 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 
+" Set realtive line numbers for better jumping
+set relativenumber
+
 " Tabs and spaces
 set tabstop=2
 set softtabstop=2
