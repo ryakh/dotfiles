@@ -1,4 +1,4 @@
-/.git/
-/tmp/
-/log/
+.git/*
+tmp/*
+log/*
 *.sqlite
