@@ -107,14 +107,16 @@ map <Leader>j :call ToggleNumber()<CR>
 set colorcolumn=80 " display vertical ruler
 set cursorline     " higlight current line
 set ruler          " show the cursor position all the time
+set t_Co=256
 
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
 " Color scheme
 syntax enable
-set background=dark
+set background=light
 let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
@@ -142,8 +144,10 @@ function! RenameFile()
   endif
 endfunction
 
-" Remove trailing whitespace on save for ruby files.
+" Remove trailing whitespace on save for files.
 au BufWritePre *.rb :%s/\s\+$//e
+au BufWritePre *.js :%s/\s\+$//e
+au BufWritePre *.css.scss :%s/\s\+$//e
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
