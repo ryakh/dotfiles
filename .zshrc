@@ -73,8 +73,5 @@ setopt EXTENDED_GLOB
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# pyenv caveeat
-eval "$(pyenv init -)"
-
 # debugging for pow
 export ENABLE_REMOTE_DEBUGGER_UNDER_POW=true
