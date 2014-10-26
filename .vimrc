@@ -114,7 +114,7 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 
 " Color scheme
 syntax enable
-set background=dark
+set background=light
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
