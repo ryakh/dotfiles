@@ -10,9 +10,6 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 
-" Set realtive line numbers for better jumping
-set relativenumber
-
 " Tabs and spaces
 set tabstop=2
 set softtabstop=2
@@ -109,26 +106,35 @@ set cursorline     " higlight current line
 set ruler          " show the cursor position all the time
 set t_Co=256
 
+" Navigating splits like a boss
+set winwidth=100
+set winminwidth=5
+
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
+" Cancel visual line wrapping
+set nowrap
+
 " Color scheme
 syntax enable
-set background=light
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme smyck
+" colorscheme solarized
+" set background=light
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Airline config
-let g:airline_theme='solarized'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+" let g:airline_theme='solarized'
+" let g:airline_left_sep = ''
+" let g:airline_right_sep = ''
 
 " Numbers
-set number
 set numberwidth=6
+set relativenumber
+set number
 
 "}}}
 " FUNCTIONS {{{

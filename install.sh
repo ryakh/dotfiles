@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EXCLUDE=("install.sh", "terminal", "git")
+EXCLUDE=("install.sh", "terminal", "git","fonts")
 
 shopt -s dotglob
 

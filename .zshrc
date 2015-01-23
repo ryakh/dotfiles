@@ -73,5 +73,5 @@ setopt EXTENDED_GLOB
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# debugging for pow
-export ENABLE_REMOTE_DEBUGGER_UNDER_POW=true
+# postgres.app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
