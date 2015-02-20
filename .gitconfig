@@ -22,7 +22,7 @@
   st = status
 
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/ruslan/.gitignore_global
     autocrlf = input
 
 [merge]

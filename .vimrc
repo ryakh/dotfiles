@@ -74,9 +74,8 @@ map <Leader>ct :!ctags -R .<CR>
 nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
-let g:vroom_map_keys = 0
-silent! map <unique> <Leader>t :VroomRunTestFile<CR>
-silent! map <unique> <Leader>s :VroomRunNearestTest<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec<CR>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -97,6 +96,9 @@ map <Leader>a :Ag
 
 " Toggle relative/absolute line numbers
 map <Leader>j :call ToggleNumber()<CR>
+
+" Toggle NERDTree
+map <Leader>f :NERDTreeToggle<CR>
 
 " }}}
 " VISUAL {{{
@@ -135,6 +137,10 @@ colorscheme smyck
 set numberwidth=6
 set relativenumber
 set number
+
+" Show line numbers and hidden files in NERD tree
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
 
 "}}}
 " FUNCTIONS {{{
@@ -222,6 +228,14 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
+
+" }}}
+" RSPEC {{{
+"
+if filereadable('.vagrant')
+  let $vagrant = join(readfile('.vagrant'), '\n')
+  let g:rspec_command = $vagrant
+endif
 
 " }}}
 

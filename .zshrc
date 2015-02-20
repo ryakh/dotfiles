@@ -68,10 +68,3 @@ unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
-
-# rbenv caveeat
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# postgres.app
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin

@@ -11,7 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'skalnik/vim-vroom'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -29,6 +29,8 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
 Bundle 'rking/ag.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'godlygeek/tabular'
 
 filetype on
 
