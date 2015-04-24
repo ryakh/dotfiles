@@ -10,6 +10,9 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 
+" Enable per project specific .vimrc
+set exrc
+
 " Tabs and spaces
 set tabstop=2
 set softtabstop=2
@@ -48,6 +51,10 @@ let mapleader = " "
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :!clear; ruby %<CR>
+
+" EasyAlign
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Rename currently opened file
 map <Leader>n :call RenameFile()<CR>

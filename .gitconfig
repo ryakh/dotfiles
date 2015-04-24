@@ -3,7 +3,7 @@
   email = ruslan@ruslan.io
 
 [push]
-  default = upstream
+	default = simple
 
 [color]
   ui = auto
