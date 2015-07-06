@@ -37,6 +37,8 @@ let g:mustache_abbreviations = 1
 " Ignore Rails tmp directory
 set wildignore+=*/tmp/*
 
+set tags=./tags
+
 " }}}
 " KEY BINDINGS {{{
 "
@@ -48,6 +50,10 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Leader
 let mapleader = " "
+
+" better buffer close
+map <Leader>g :BD<CR>
+map <Leader>d :bd<CR>
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :!clear; ruby %<CR>
@@ -129,7 +135,7 @@ set nowrap
 syntax enable
 colorscheme smyck
 " colorscheme solarized
-" set background=light
+" set background=dark
 " let g:solarized_contrast="high"
 " let g:solarized_visibility="high"
 " highlight NonText guibg=#060606
@@ -137,8 +143,10 @@ colorscheme smyck
 
 " Airline config
 " let g:airline_theme='solarized'
-" let g:airline_left_sep = ''
-" let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#branch#displayed_head_limit = 10
 
 " Numbers
 set numberwidth=6
