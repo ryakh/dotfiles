@@ -55,6 +55,9 @@ let mapleader = " "
 map <Leader>g :BD<CR>
 map <Leader>d :bd<CR>
 
+" show tagbar
+nmap <Leader>, :TagbarToggle<CR>
+
 " Exuction of current ruby buffer
 nnoremap <Leader>r :!clear; ruby %<CR>
 
@@ -88,7 +91,7 @@ nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec<CR>
+map <Leader>s :call RunNearestSpec()<CR>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -243,15 +246,5 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
-
-" }}}
-" RSPEC {{{
-"
-if filereadable('.vagrant')
-  let $vagrant = join(readfile('.vagrant'), '\n')
-  let g:rspec_command = $vagrant
-endif
-
-" }}}
 
 " vim:foldmethod=marker:foldlevel=0

@@ -32,6 +32,7 @@ Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'AndrewRadev/linediff.vim'
+Bundle 'majutsushi/tagbar'
 
 filetype on
 
