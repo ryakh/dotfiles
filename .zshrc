@@ -68,5 +68,3 @@ unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
-
-eval "$(rbenv init -)"
