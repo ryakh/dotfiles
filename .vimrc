@@ -1,5 +1,8 @@
 " GENERAL {{{
 "
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+set regexpengine=1
+
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -104,6 +107,9 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
+" Fuzzy search
+nnoremap <C-o> :call SelectaCommand("find * -type f", "", ":e")<cr>
+
 " Better saving
 map <Leader>w :w<CR>
 
@@ -174,6 +180,19 @@ function! RenameFile()
   endif
 endfunction
 
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
 " Remove trailing whitespace on save for files.
 au BufWritePre *.rb :%s/\s\+$//e
 au BufWritePre *.js :%s/\s\+$//e
@@ -240,7 +259,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " CtrlP settings
 let g:ctrlp_show_hidden=1
 let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
+let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 

@@ -68,3 +68,10 @@ unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+# ensure dotfiles bin directory is loaded first
+export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
+# Rbenv goodness
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
