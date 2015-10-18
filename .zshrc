@@ -12,10 +12,6 @@ done
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as the visual editor
-export VISUAL=vim
-export EDITOR=$VISUAL
-
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
@@ -68,10 +64,3 @@ unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
-
-# ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
-
-# Rbenv goodness
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
