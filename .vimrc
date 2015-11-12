@@ -108,7 +108,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Fuzzy search
-nnoremap <C-o> :call SelectaCommand("find * -type f", "", ":e")<cr>
+nnoremap <C-o> :call SelectaCommand("git ls-files -oc --exclude-standard", "", ":e")<cr>
 
 " Better saving
 map <Leader>w :w<CR>
