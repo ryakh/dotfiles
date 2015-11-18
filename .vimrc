@@ -126,7 +126,7 @@ map <Leader>f :NERDTreeToggle<CR>
 " VISUAL {{{
 "
 set colorcolumn=80 " display vertical ruler
-set cursorline     " higlight current line
+" set cursorline     " higlight current line
 set ruler          " show the cursor position all the time
 set t_Co=256
 
