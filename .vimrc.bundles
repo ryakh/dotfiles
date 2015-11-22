@@ -33,6 +33,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'mxw/vim-jsx'
 
 filetype on
 
