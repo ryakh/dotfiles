@@ -1,7 +1,6 @@
 " GENERAL {{{
 "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-set regexpengine=1
 
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
