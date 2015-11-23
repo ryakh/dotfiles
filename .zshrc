@@ -12,6 +12,13 @@ done
 # automatically enter directories without cd
 setopt auto_cd
 
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
+
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
@@ -20,7 +27,6 @@ fi
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
 
 # use incremental search
 bindkey "^R" history-incremental-search-backward
@@ -31,6 +37,7 @@ bindkey "^E" end-of-line
 
 # handy keybindings
 bindkey "^P" history-search-backward
+bindkey "^K" kill-line
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
@@ -65,5 +72,9 @@ unsetopt CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
+# Rbenv goodness
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
+
+# Docker stuff
+eval "$(/usr/local/bin/docker-machine env default)"
