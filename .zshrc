@@ -75,6 +75,3 @@ setopt EXTENDED_GLOB
 # Rbenv goodness
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
-
-# Docker stuff
-eval "$(/usr/local/bin/docker-machine env default)"
