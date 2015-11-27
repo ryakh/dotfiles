@@ -75,3 +75,6 @@ setopt EXTENDED_GLOB
 # Rbenv goodness
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
