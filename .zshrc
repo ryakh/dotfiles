@@ -32,7 +32,7 @@ bindkey "^F" vi-cmd-mode
 bindkey "^R" history-incremental-search-backward
 
 # add some readline keys back
-bindkey "^A" beginning-of-line
+bindkey "^S" beginning-of-line
 bindkey "^E" end-of-line
 
 # handy keybindings
