@@ -78,3 +78,6 @@ eval "$(rbenv init - --no-rehash)"
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
