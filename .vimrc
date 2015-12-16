@@ -140,17 +140,13 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
+let base16colorspace=256
 syntax enable
-colorscheme smyck
-" colorscheme solarized
-" set background=dark
-" let g:solarized_contrast="high"
-" let g:solarized_visibility="high"
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme base16-default
+set background=dark
 
 " Airline config
-" let g:airline_theme='solarized'
+let g:airline_theme='base16'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
