@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -34,6 +33,7 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'AndrewRadev/linediff.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mxw/vim-jsx'
+Bundle 'janko-m/vim-test'
 
 filetype on
 
