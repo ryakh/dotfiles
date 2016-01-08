@@ -41,6 +41,9 @@ set wildignore+=*/tmp/*
 
 set tags=./tags
 
+" Run tests in tmux
+let test#strategy = "vimux"
+
 " }}}
 " KEY BINDINGS {{{
 "

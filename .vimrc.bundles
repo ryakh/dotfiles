@@ -34,6 +34,7 @@ Bundle 'AndrewRadev/linediff.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mxw/vim-jsx'
 Bundle 'janko-m/vim-test'
+Bundle 'benmills/vimux'
 
 filetype on
 
