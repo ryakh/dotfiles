@@ -41,6 +41,9 @@ set wildignore+=*/tmp/*
 
 set tags=./tags
 
+" Run tests in tmux
+let test#strategy = "vimux"
+
 " }}}
 " KEY BINDINGS {{{
 "
@@ -92,8 +95,9 @@ map <Leader>ct :!ctags -R .<CR>
 nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>s :TestFile<CR>
+nmap <silent> <leader>l :TestLast<CR>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
