@@ -144,8 +144,9 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
+let base16colorspace=256
+colorscheme base16-tomorrow
 syntax enable
-colorscheme Tomorrow-Night
 set background=dark
 
 " Airline config
