@@ -150,7 +150,6 @@ syntax enable
 set background=dark
 
 " Airline config
-let g:airline_theme='base16'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
