@@ -144,7 +144,7 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-colorscheme jellybeans
+colorscheme smyck
 syntax enable
 
 " Airline config
