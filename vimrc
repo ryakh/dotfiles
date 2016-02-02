@@ -146,12 +146,7 @@ set nowrap
 " Color scheme
 colorscheme smyck
 syntax enable
-
-" Airline config
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#branch#displayed_head_limit = 10
+hi ColorColumn ctermbg=238
 
 " Numbers
 set numberwidth=6
