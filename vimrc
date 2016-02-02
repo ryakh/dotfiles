@@ -144,10 +144,8 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-let base16colorspace=256
-colorscheme base16-tomorrow
+colorscheme jellybeans
 syntax enable
-set background=dark
 
 " Airline config
 let g:airline_left_sep = ''
