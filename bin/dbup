@@ -1,0 +1,16 @@
+#!/bin/bash
+
+for var in "$@"
+do
+  echo "$var"
+
+  mysql -uvagrant -pvagrant -e "drop database $var" || true
+
+  mysql -uvagrant -pvagrant -e "create database $var"
+  mysql -uvagrant -pvagrant $var < $var-slim
+  mysql -uvagrant -pvagrant -e "use $var; update client set email = concat(firstname, '@example.com')"
+  mysql -uvagrant -pvagrant -e "use $var; update staff set email = concat(firstname, '@example.com')"
+  mysql -uvagrant -pvagrant -e "use $var; update adv_web_settings set upload_server = 'dev'"
+  mysql -uvagrant -pvagrant -e "use $var; update user set crypted_password = md5('password') where username_pk = 'admin';"
+done
+
