@@ -54,9 +54,6 @@ setopt histignoredups
 # keep TONS of history
 export HISTSIZE=4096
 
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
 # automatically pushd
 setopt auto_pushd
 export dirstacksize=5
