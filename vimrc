@@ -2,6 +2,10 @@
 "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -145,7 +149,9 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-colorscheme smyck
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
+set background=dark
 syntax enable
 hi ColorColumn ctermbg=238
 

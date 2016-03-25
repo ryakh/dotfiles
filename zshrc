@@ -1,6 +1,9 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# gruvbox stuff
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
 # completion
 autoload -U compinit
 compinit

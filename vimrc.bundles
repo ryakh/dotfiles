@@ -1,39 +1,36 @@
-set nocompatible
+if &compatible
+  set nocompatible
+end
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/tComment'
-Bundle 'xenoterracide/html.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'ryakh/bufkill.vim'
-Bundle 'juvenn/mustache.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'scrooloose/syntastic'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'AndrewRadev/linediff.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'mxw/vim-jsx'
-Bundle 'janko-m/vim-test'
-Bundle 'benmills/vimux'
+Plug 'morhetz/gruvbox'
+Plug 'vim-ruby/vim-ruby'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/ctags.vim'
+Plug 'vim-scripts/greplace.vim'
+Plug 'vim-scripts/tComment'
+Plug 'xenoterracide/html.vim'
+Plug 'mattn/emmet-vim'
+Plug 'ryakh/bufkill.vim'
+Plug 'juvenn/mustache.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/syntastic'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/vim-easy-align'
+Plug 'AndrewRadev/linediff.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mxw/vim-jsx'
+Plug 'janko-m/vim-test'
+Plug 'benmills/vimux'
 
-filetype on
-
+call plug#end()
