@@ -12,5 +12,6 @@ do
   mysql -uvagrant -pvagrant -e "use $var; update staff set email = concat(firstname, '@example.com')"
   mysql -uvagrant -pvagrant -e "use $var; update adv_web_settings set upload_server = 'dev'"
   mysql -uvagrant -pvagrant -e "use $var; update user set crypted_password = md5('password') where username_pk = 'admin';"
+  mysql -uvagrant -pvagrant -e "use $var; update register set external_ip = 'beta', hostname = 'beta', external_img_url = 'http://beta';"
 done
 
