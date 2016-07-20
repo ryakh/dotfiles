@@ -78,5 +78,3 @@ eval "$(rbenv init - --no-rehash)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-export GH_ACCESS_TOKEN="8e6d06c52e713a6e89d98d73a5a0e0480715b054"
