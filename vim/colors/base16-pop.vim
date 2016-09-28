@@ -1,6 +1,6 @@
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Chalk scheme by Chris Kempson (http://chriskempson.com)
+" Pop scheme by Chris Kempson (http://chriskempson.com)
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -8,27 +8,27 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has('gui_running')
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-chalk.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-pop.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "151515"
+let s:gui00 = "000000"
 let s:gui01 = "202020"
 let s:gui02 = "303030"
 let s:gui03 = "505050"
 let s:gui04 = "b0b0b0"
 let s:gui05 = "d0d0d0"
 let s:gui06 = "e0e0e0"
-let s:gui07 = "f5f5f5"
-let s:gui08 = "fb9fb1"
-let s:gui09 = "eda987"
-let s:gui0A = "ddb26f"
-let s:gui0B = "acc267"
-let s:gui0C = "12cfc0"
-let s:gui0D = "6fc2ef"
-let s:gui0E = "e1a3ee"
-let s:gui0F = "deaf8f"
+let s:gui07 = "ffffff"
+let s:gui08 = "eb008a"
+let s:gui09 = "f29333"
+let s:gui0A = "f8ca12"
+let s:gui0B = "37b349"
+let s:gui0C = "00aabb"
+let s:gui0D = "0e5a94"
+let s:gui0E = "b31e8d"
+let s:gui0F = "7a2d00"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -60,7 +60,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-chalk"
+let g:colors_name = "base16-pop"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)

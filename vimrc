@@ -149,11 +149,12 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-let g:gruvbox_contrast_dark='soft'
-colorscheme gruvbox
-set background=dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 syntax enable
-hi ColorColumn ctermbg=238
 
 " Numbers
 set numberwidth=6
