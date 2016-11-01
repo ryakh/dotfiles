@@ -133,9 +133,7 @@ map <Leader>f :NERDTreeToggle<CR>
 " VISUAL {{{
 "
 set colorcolumn=80 " display vertical ruler
-let &colorcolumn=join(range(81,120),",") " set the background colour of columns 80 onwards
 set ruler          " show the cursor position all the time
-set t_Co=256
 set foldcolumn=0   " disable fold column
 
 " Navigating splits like a boss

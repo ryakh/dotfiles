@@ -34,5 +34,6 @@ Plug 'mxw/vim-jsx'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
+Plug 'isRuslan/vim-es6'
 
 call plug#end()
