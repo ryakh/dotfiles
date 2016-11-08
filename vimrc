@@ -6,6 +6,10 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -114,9 +118,6 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
-" Fuzzy search
-nnoremap <C-o> :call SelectaCommand("git ls-files -oc --exclude-standard", "", ":e")<cr>
-
 " Better saving
 map <Leader>w :w<CR>
 
@@ -175,19 +176,6 @@ function! RenameFile()
     exec ':silent !rm ' . old_name
     redraw!
   endif
-endfunction
-
-" Run a given vim command on the results of fuzzy selecting from a given shell
-" command.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
 endfunction
 
 " Remove trailing whitespace on save for files.
