@@ -137,10 +137,6 @@ set colorcolumn=80 " display vertical ruler
 set ruler          " show the cursor position all the time
 set foldcolumn=0   " disable fold column
 
-" Navigating splits like a boss
-set winwidth=100
-set winminwidth=5
-
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
