@@ -2,8 +2,8 @@
 "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.config/nvim/nvimrc.bundles"))
+  source ~/.config/nvim/nvimrc.bundles
 endif
 
 if executable('ag')
@@ -20,6 +20,9 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 
+" Use system clipboard
+set clipboard+=unnamedplus
+
 " Enable per project specific .vimrc
 set exrc
 
@@ -31,11 +34,6 @@ set expandtab
 
 " Autocomplete for command menu
 set wildmenu
-
-" Folding
-set foldmethod=indent
-set foldcolumn=4
-set nofoldenable
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -55,6 +53,9 @@ let test#strategy = "dispatch"
 " }}}
 " KEY BINDINGS {{{
 "
+
+language en_US
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -113,6 +114,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Ugly hack to make ^-h work
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
+
 " Swiftier buffer navigation
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
@@ -135,7 +141,6 @@ map <Leader>f :NERDTreeToggle<CR>
 "
 set colorcolumn=80 " display vertical ruler
 set ruler          " show the cursor position all the time
-set foldcolumn=0   " disable fold column
 
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
@@ -144,9 +149,9 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-if filereadable(expand("~/.vimrc_background"))
+if filereadable(expand("~/.config/nvim/nvimrc_background"))
   let base16colorspace=256
-  source ~/.vimrc_background
+  source ~/.config/nvim/nvimrc_background
 endif
 
 syntax enable
@@ -159,6 +164,12 @@ set number
 " Show line numbers and hidden files in NERD tree
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
+
+" Style checker symbols
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '=>'
+let g:ale_sign_warning = '->'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 "}}}
 " FUNCTIONS {{{
@@ -183,10 +194,6 @@ au BufWritePre *.css.scss :%s/\s\+$//e
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-endif
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
 endif
 
 filetype plugin indent on
@@ -243,8 +250,5 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
 
 " vim:foldmethod=marker:foldlevel=0
