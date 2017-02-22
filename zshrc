@@ -81,3 +81,5 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 #
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 # tic $TERM.ti
+
+export PATH="$HOME/.yarn/bin:$PATH"
