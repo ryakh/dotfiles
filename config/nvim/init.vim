@@ -117,8 +117,8 @@ endif
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Better saving
-map <C-a> <esc>:w<CR>
-imap <C-a> <esc>:w<CR>
+map <C-q> <esc>:w<CR>
+imap <C-q> <esc>:w<CR>
 
 " Open tabs
 map <C-t> <esc>:tabnew<CR>
