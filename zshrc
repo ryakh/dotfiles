@@ -1,6 +1,10 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# disable flow control to enable C-s in vim
+stty start undef
+stty stop undef
+
 # completion
 autoload -U compinit
 compinit

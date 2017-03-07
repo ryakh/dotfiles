@@ -22,5 +22,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
 Plug 'janko-m/vim-test'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()

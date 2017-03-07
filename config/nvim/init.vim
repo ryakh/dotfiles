@@ -39,6 +39,9 @@ set wildignore+=*/tmp/*
 
 set tags=./tags
 
+" Disable mouse
+set mouse=
+
 " Run tests in tmux
 let test#strategy = "dispatch"
 
@@ -55,6 +58,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Leader
 let mapleader = " "
+
+" EasyMotion
+map <Leader> <Plug>(easymotion-prefix)
 
 " Better buffer close
 map <Leader>g :BD<CR>
@@ -111,7 +117,21 @@ endif
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Better saving
-map <Leader>w :w<CR>
+map <C-a> <esc>:w<CR>
+imap <C-a> <esc>:w<CR>
+
+" Open tabs
+map <C-t> <esc>:tabnew<CR>
+imap <C-t> <esc>:tabnew<CR>
+
+" Close last open split/tab/window
+map <C-x> <C-w>c
+
+" Emacs like $ ^ bigings
+map <c-e> $
+imap <c-e> <c-o>$
+map <c-w> ^
+imap <c-w> <c-o>^
 
 " Search for string patterns inside files
 map <Leader>a :Ag
