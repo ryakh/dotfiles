@@ -130,14 +130,11 @@ map <C-x> <C-w>c
 " Emacs like $ ^ bigings
 map <c-e> $
 imap <c-e> <c-o>$
-map <c-w> ^
-imap <c-w> <c-o>^
+map <c-g> ^
+imap <c-g> <c-o>^
 
 " Search for string patterns inside files
 map <Leader>a :Ag
-
-" Toggle NERDTree
-map <Leader>f :NERDTreeToggle<CR>
 
 " }}}
 " VISUAL {{{
