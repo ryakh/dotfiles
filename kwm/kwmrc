@@ -37,7 +37,7 @@ e.g: window-rules in a separate file called 'rules'
 */
 
 # Set default values for screen padding
-kwmc config padding 36 36 52 52
+kwmc config padding 23 23 39 39
 
 # Set default values for container gaps
 kwmc config gap 13 13

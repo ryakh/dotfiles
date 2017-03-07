@@ -1,7 +1,5 @@
 " GENERAL {{{
 "
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
-
 if filereadable(expand("~/.config/nvim/nvimrc.bundles"))
   source ~/.config/nvim/nvimrc.bundles
 endif
@@ -23,9 +21,6 @@ set modelines=1   " Allow last line of the file to be modeline
 " Use system clipboard
 set clipboard+=unnamedplus
 
-" Enable per project specific .vimrc
-set exrc
-
 " Tabs and spaces
 set tabstop=2
 set softtabstop=2
@@ -39,9 +34,6 @@ set wildmenu
 set splitbelow
 set splitright
 
-" Autoexpand HBS brackets
-let g:mustache_abbreviations = 1
-
 " Ignore Rails tmp directory
 set wildignore+=*/tmp/*
 
@@ -53,7 +45,6 @@ let test#strategy = "dispatch"
 " }}}
 " KEY BINDINGS {{{
 "
-
 language en_US
 
 " Get off my lawn
@@ -65,12 +56,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Leader
 let mapleader = " "
 
-" better buffer close
+" Better buffer close
 map <Leader>g :BD<CR>
 map <Leader>d :bd<CR>
-
-" show tagbar
-nmap <Leader>, :TagbarToggle<CR>
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :!clear; ruby %<CR>
@@ -120,8 +108,6 @@ if has('nvim')
 endif
 
 " Swiftier buffer navigation
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Better saving
@@ -130,9 +116,6 @@ map <Leader>w :w<CR>
 " Search for string patterns inside files
 map <Leader>a :Ag
 
-" Toggle relative/absolute line numbers
-map <Leader>j :call ToggleNumber()<CR>
-
 " Toggle NERDTree
 map <Leader>f :NERDTreeToggle<CR>
 
@@ -140,8 +123,7 @@ map <Leader>f :NERDTreeToggle<CR>
 " VISUAL {{{
 "
 set colorcolumn=80 " display vertical ruler
-set ruler          " show the cursor position all the time
-
+"
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
@@ -158,18 +140,10 @@ syntax enable
 
 " Numbers
 set numberwidth=6
-set relativenumber
 set number
-
-" Show line numbers and hidden files in NERD tree
-let NERDTreeShowLineNumbers=1
+"
+" " Show line numbers and hidden files in NERD tree
 let NERDTreeShowHidden=1
-
-" Style checker symbols
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '=>'
-let g:ale_sign_warning = '->'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 "}}}
 " FUNCTIONS {{{
@@ -200,7 +174,6 @@ filetype plugin indent on
 
 augroup vimrcEx
   au!
-
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
@@ -218,16 +191,6 @@ augroup END
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" Toggle between relative and absolute line numbers
-function! ToggleNumber()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunction
 
 " }}}
 " EDITOR {{{
