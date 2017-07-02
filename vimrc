@@ -1,7 +1,7 @@
 " GENERAL {{{
 "
-if filereadable(expand("~/.config/nvim/nvimrc.bundles"))
-  source ~/.config/nvim/nvimrc.bundles
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
 
 if executable('ag')
@@ -18,9 +18,8 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
-
-" Use system clipboard
-set clipboard+=unnamedplus
+set foldmethod=syntax
+set nofoldenable
 
 " Tabs and spaces
 set tabstop=2
@@ -109,11 +108,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Ugly hack to make ^-h work
-if has('nvim')
-  nmap <BS> <C-W>h
-endif
-
 " Swiftier buffer navigation
 nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
@@ -124,10 +118,6 @@ imap <C-q> <esc>:w<CR>
 " Open tabs
 map <C-t> <esc>:tabnew<CR>
 imap <C-t> <esc>:tabnew<CR>
-
-" Open NERD Tree
-map <C-n> <esc>:NERDTreeToggle<CR>
-imap <C-n> <esc>:NERDTreeToggle<CR>
 
 " Close last open split/tab/window
 map <C-x> <C-w>c
@@ -153,10 +143,17 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-if filereadable(expand("~/.config/nvim/nvimrc_background"))
+if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
-  source ~/.config/nvim/nvimrc_background
+  source ~/.vimrc_background
 endif
+
+" Navigating splits like a boss
+set winwidth=100
+set winminwidth=5
+
+" Disable netrw banner
+let g:netrw_banner = 0
 
 syntax enable
 
@@ -228,5 +225,8 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
 
 " vim:foldmethod=marker:foldlevel=0

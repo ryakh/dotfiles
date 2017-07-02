@@ -33,10 +33,3 @@ alias m="migrate"
 alias rk="rake"
 alias s="rspec"
 alias z="zeus"
-
-# Virtual boxes
-alias alpha="ssh -A vagrant@192.168.33.100"
-alias beta="ssh -A vagrant@192.168.33.50"
-
-# Aww Yiss!
-alias vim="nvim"
