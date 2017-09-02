@@ -1,8 +1,0 @@
-rspec() {
-  if [ -S .zeus.sock ]; then
-    zeus test spec "$@"
-  else
-    command rspec "$@"
-  fi
-}
-

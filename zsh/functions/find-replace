@@ -1,7 +1,0 @@
-# Usage: find-replace 'FILENAME.EXTENSION' 's/FIND/REPLACE/g'
-# Finds all occuracnce of FIND inside FILENAME.EXTENSION and replaces them
-# with RELACE
-
-function find-replace() {
-  find . -name "$1" -print -exec sed '' "$2" {} \;
-}

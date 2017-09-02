@@ -1,5 +1,8 @@
 " GENERAL {{{
 "
+silent !stty -ixon
+autocmd VimLeave * silent !stty ixon
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -18,7 +21,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
-set foldmethod=syntax
+set foldmethod=indent
 set nofoldenable
 
 " Tabs and spaces
@@ -48,7 +51,6 @@ let test#strategy = "dispatch"
 " }}}
 " KEY BINDINGS {{{
 "
-language en_US
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -143,10 +145,9 @@ set list listchars=nbsp:¬,tab:»·,trail:·
 set nowrap
 
 " Color scheme
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+syntax enable
+set background=dark
+colorscheme gruvbox
 
 " Navigating splits like a boss
 set winwidth=100
@@ -154,8 +155,6 @@ set winminwidth=5
 
 " Disable netrw banner
 let g:netrw_banner = 0
-
-syntax enable
 
 "}}}
 " FUNCTIONS {{{

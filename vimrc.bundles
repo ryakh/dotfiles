@@ -24,5 +24,6 @@ Plug 'tpope/vim-surround'
 Plug 'janko-m/vim-test'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-syntastic/syntastic'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
