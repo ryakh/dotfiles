@@ -3,7 +3,7 @@
   email = ruslan@ruslan.io
 
 [push]
-	default = simple
+  default = simple
 
 [color]
   ui = auto
@@ -22,10 +22,10 @@
   st = status
 
 [core]
-	excludesfile = /Users/ruslan/.gitignore_global
-    autocrlf = input
+  excludesfile = /Users/ruslan/.gitignore_global
+  autocrlf = input
 
 [filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
