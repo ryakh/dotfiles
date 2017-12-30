@@ -93,8 +93,11 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 
+" Open :Ex
+map <C-s> <esc>:Explore<CR>
+
 " Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
+noremap <Leader>ct :!ctags -R .<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -141,13 +144,13 @@ set colorcolumn=80 " display vertical ruler
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
-" Cancel visual line wrapping
-set nowrap
-
 " Color scheme
 syntax enable
 set background=dark
 colorscheme gruvbox
+
+" Cancel visual line wrapping
+set nowrap
 
 " Navigating splits like a boss
 set winwidth=100
@@ -225,7 +228,11 @@ let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+" ALE Syntax checkers
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
+
+set t_ut=
 
 " vim:foldmethod=marker:foldlevel=0

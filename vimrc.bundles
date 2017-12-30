@@ -23,7 +23,7 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
 Plug 'janko-m/vim-test'
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 
 call plug#end()

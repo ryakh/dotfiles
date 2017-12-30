@@ -2,7 +2,7 @@
 alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
-alias ...='../..'
+alias ...='cd ../..'
 alias ls='ls -G'
 alias l='ls'
 alias ll='ls -al'
@@ -11,7 +11,7 @@ alias e="$EDITOR"
 alias v="$VISUAL"
 
 # git
-alias gci="git pull --rebase && rake && git push"
+alias gci="git pull --rebase && rspec && git push"
 alias gl="git log --pretty=oneline --abbrev-commit"
 
 # Bundler
@@ -29,4 +29,3 @@ alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db
 alias m="migrate"
 alias rk="rake"
 alias s="rspec"
-alias z="zeus"

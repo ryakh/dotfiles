@@ -28,3 +28,7 @@ eval "$(rbenv init -)"
 source ~/.config/gruvbox.sh
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export TERM=xterm-256color
+
+export PATH=".git/safe/../../bin:$PATH"
