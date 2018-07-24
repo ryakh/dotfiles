@@ -1,3 +1,5 @@
+language en_US
+
 " GENERAL {{{
 "
 silent !stty -ixon
@@ -21,7 +23,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
-set foldmethod=indent
+set foldmethod=syntax
 set nofoldenable
 
 " Tabs and spaces
@@ -40,13 +42,16 @@ set splitright
 " Ignore Rails tmp directory
 set wildignore+=*/tmp/*
 
-" set tags=./tags
+set tags=./tags
 
 " Disable mouse
 set mouse=
 
 " Run tests in tmux
 let test#strategy = "dispatch"
+
+" Autocompletion
+let g:deoplete#enable_at_startup = 1
 
 " }}}
 " KEY BINDINGS {{{
@@ -57,6 +62,10 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" FZF
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-o> :Buffers<CR>
 
 " Leader
 let mapleader = " "
@@ -69,7 +78,7 @@ map <Leader>g :BD<CR>
 map <Leader>d :bd<CR>
 
 " Exuction of current ruby buffer
-nnoremap <Leader>r :!clear; ruby %<CR>
+nnoremap <Leader>r :read !clear; ruby %<CR>
 
 " EasyAlign
 vmap <Enter> <Plug>(EasyAlign)
@@ -97,7 +106,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 map <C-s> <esc>:Explore<CR>
 
 " Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R .<CR>
+noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --languages=ruby --exclude=log . $(bundle list --paths)<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -112,9 +121,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Swiftier buffer navigation
-nnoremap <silent> <Leader>p :CtrlPBuffer<CR>
 
 " Better saving
 map <C-q> <esc>:w<CR>
@@ -139,15 +145,17 @@ map <Leader>a :Ag
 " }}}
 " VISUAL {{{
 "
-set colorcolumn=80 " display vertical ruler
-"
+" Load colorscheme from config file
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
 " Color scheme
 syntax enable
-set background=dark
-colorscheme gruvbox
 
 " Cancel visual line wrapping
 set nowrap
@@ -156,8 +164,9 @@ set nowrap
 set winwidth=100
 set winminwidth=5
 
-" Disable netrw banner
+" NETRW config
 let g:netrw_banner = 0
+let g:netrw_browse_split = 2
 
 "}}}
 " FUNCTIONS {{{
@@ -230,7 +239,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " ALE Syntax checkers
 let g:ale_linters = {
-\   'ruby': ['rubocop'],
+\   'ruby': ['rubocop']
 \}
 
 set t_ut=

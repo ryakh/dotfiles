@@ -32,3 +32,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export TERM=xterm-256color
 
 export PATH=".git/safe/../../bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+export FZF_DEFAULT_COMMAND='ag --nocolor --hidden --ignore node_modules --ignore tmp -g ""'
+
+export PATH="./node_modules/.bin:$PATH"
+
+export EDITOR="nvim"
+
+BASE16_SHELL=$HOME/.submodules/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

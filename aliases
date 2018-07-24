@@ -9,10 +9,15 @@ alias ll='ls -al'
 alias lh='ls -Alh'
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias -g G='| grep'
+alias -g M='| less'
+alias -g L='| wc -l'
+alias -g ONE="| awk '{ print \$1}'"
 
 # git
 alias gci="git pull --rebase && rspec && git push"
 alias gl="git log --pretty=oneline --abbrev-commit"
+alias gg="git log --graph --oneline --all"
 
 # Bundler
 alias b="bundle"
@@ -29,3 +34,6 @@ alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db
 alias m="migrate"
 alias rk="rake"
 alias s="rspec"
+
+# Elasticsearch
+alias elastic="ES_JAVA_OPTS='-Xms64m -Xmx256m' elasticsearch"
