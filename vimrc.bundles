@@ -31,5 +31,6 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-vinegar'
 Plug 'chriskempson/base16-vim'
+Plug 'majutsushi/tagbar'
 
 call plug#end()

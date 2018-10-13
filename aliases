@@ -32,7 +32,8 @@ alias giv="gem install -v"
 # Rails
 alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
 alias m="migrate"
-alias rk="rake"
+alias rk="noglob rake"
+alias rake="noglob rake"
 alias s="rspec"
 
 # Elasticsearch

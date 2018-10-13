@@ -20,6 +20,7 @@
   pr = !hub pull-request
   rebase-origin = !git fetch origin && git rebase origin/master
   st = status
+  squash = "!f(){ git reset --soft HEAD~${1} && git commit --amend -C HEAD; };f"
 
 [core]
   excludesfile = /Users/ruslan/.gitignore_global

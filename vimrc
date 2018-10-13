@@ -142,6 +142,9 @@ imap <c-g> <c-o>^
 " Search for string patterns inside files
 map <Leader>a :Ag
 
+" Show tagbar
+map <F8> :TagbarToggle<CR>
+
 " }}}
 " VISUAL {{{
 "
