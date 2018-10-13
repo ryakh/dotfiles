@@ -1,5 +1,3 @@
-" language en_US
-
 " GENERAL {{{
 "
 " silent !stty -ixon
@@ -24,7 +22,6 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 set foldmethod=syntax
-set nofoldenable
 
 " Tabs and spaces
 set tabstop=2
