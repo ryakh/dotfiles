@@ -1,9 +1,9 @@
-language en_US
+" language en_US
 
 " GENERAL {{{
 "
-silent !stty -ixon
-autocmd VimLeave * silent !stty ixon
+" silent !stty -ixon
+" autocmd VimLeave * silent !stty ixon
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -170,6 +170,9 @@ set winminwidth=5
 " NETRW config
 let g:netrw_banner = 0
 let g:netrw_browse_split = 2
+
+" Disable ALE highlights
+let g:ale_set_highlights = 0
 
 "}}}
 " FUNCTIONS {{{
