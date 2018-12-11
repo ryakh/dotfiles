@@ -50,6 +50,13 @@ let test#strategy = "dispatch"
 " Autocompletion
 let g:deoplete#enable_at_startup = 1
 
+" Python support
+let g:python3_host_prog = '/usr/bin/python3'
+
+" Enable omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " }}}
 " KEY BINDINGS {{{
 "
