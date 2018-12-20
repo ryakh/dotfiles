@@ -5,14 +5,12 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'Valloric/YouCompleteMe'
 Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'

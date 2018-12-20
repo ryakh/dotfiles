@@ -21,7 +21,8 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
-set foldmethod=syntax
+set foldmethod=manual
+set nofoldenable
 
 " Tabs and spaces
 set tabstop=2
@@ -46,16 +47,6 @@ set mouse=
 
 " Run tests in tmux
 let test#strategy = "dispatch"
-
-" Autocompletion
-let g:deoplete#enable_at_startup = 1
-
-" Python support
-let g:python3_host_prog = '/usr/bin/python3'
-
-" Enable omnicompletion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
 " }}}
 " KEY BINDINGS {{{
@@ -83,10 +74,6 @@ map <Leader>d :bd<CR>
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :read !clear; ruby %<CR>
-
-" EasyAlign
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " Rename currently opened file
 map <Leader>n :call RenameFile()<CR>
@@ -146,9 +133,6 @@ imap <c-g> <c-o>^
 " Search for string patterns inside files
 map <Leader>a :Ag
 
-" Show tagbar
-map <F8> :TagbarToggle<CR>
-
 " }}}
 " VISUAL {{{
 "
@@ -173,7 +157,7 @@ set winminwidth=5
 
 " NETRW config
 let g:netrw_banner = 0
-let g:netrw_browse_split = 2
+let g:netrw_browse_split = 0
 
 " Disable ALE highlights
 let g:ale_set_highlights = 0
@@ -251,7 +235,5 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ale_linters = {
 \   'ruby': ['rubocop']
 \}
-
-set t_ut=
 
 " vim:foldmethod=marker:foldlevel=0
