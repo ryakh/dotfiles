@@ -58,7 +58,7 @@ format = <label>
 ; }}}
 ; VOLUME MODULE {{{
 [module/volume]
-type = internal/pulseaudio
+type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
@@ -174,11 +174,10 @@ bar-used-empty-foreground = ${colors.pastel-white}
 type = internal/network
 
 interface = wlp2s0
-click-left = nm-connection-editor
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %{A1:nm-connection-editor:}%essid:8%%{A}
-label-disconnected = [      ]
+format-connected = %{A1:nm-connection-editor:}<ramp-signal>%{A} <label-connected>
+label-connected = %essid:8%
+label-disconnected = %{A1:nm-connection-editor:}[      ]%{A}
 
 ramp-signal-0 = [:.....]
 ramp-signal-1 = [::....]
@@ -198,8 +197,6 @@ label-layout = [%layout%]
 ;
 ; }}}
 
-; vim:foldmethod=marker:foldlevel=0
-
 ;######################################################################
 ; backlight module
 ;######################################################################
@@ -218,3 +215,6 @@ ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
+
+; vim:foldmethod=marker:foldlevel=0
+
