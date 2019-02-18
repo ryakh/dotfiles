@@ -48,6 +48,9 @@ set mouse=
 " Run tests in tmux
 let test#strategy = "dispatch"
 
+" Indents based on file type
+filetype plugin indent on
+
 " }}}
 " KEY BINDINGS {{{
 "
@@ -97,7 +100,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 map <C-s> <esc>:Explore<CR>
 
 " Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --languages=ruby --exclude=log . $(bundle list --paths)<CR>
+noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -187,8 +190,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-filetype plugin indent on
-
 augroup vimrcEx
   au!
   " For all text files set 'textwidth' to 78 characters.
@@ -208,6 +209,15 @@ augroup END
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+" Run tests in docker
+function! DockerTransform(cmd)
+  return('cd /home/ruslan/Code/convertkit-docker; '.a:cmd)
+endfunction
+
+let test#ruby#rspec#executable = 'docker-compose run -e RAILS_ENV=test rails bundle exec rspec'
+let g:test#custom_transformations = {'docker': function('DockerTransform')}
+let g:test#transformation = 'docker'
 
 " }}}
 " EDITOR {{{
