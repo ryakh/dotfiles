@@ -1,0 +1,6 @@
+ssh-stag() {
+  local staging_ip
+  staging_ip=( $(ssh staging-deploy 'cd ~/convertkit-deploy; ansible all --list | awk "NR > 2 { print }" | shuf -n 1 | tr -d " "') )
+
+  ssh -t $staging_ip "sudo su -c 'cd /srv/ckapp/current && bundle exec rails c' -s /bin/sh ckapp"
+}

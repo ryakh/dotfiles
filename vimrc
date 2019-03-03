@@ -1,7 +1,4 @@
 " GENERAL {{{
-"
-" silent !stty -ixon
-" autocmd VimLeave * silent !stty ixon
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -51,15 +48,27 @@ let test#strategy = "dispatch"
 " Indents based on file type
 filetype plugin indent on
 
+" Always copy to system clipboard
+set clipboard=unnamedplus
+
+" Goyo (focus mode)
+let g:goyo_width = '50%'
+let g:goyo_height = '85%'
+let g:goyo_linenr = '1'
+
+
 " }}}
 " KEY BINDINGS {{{
 "
-
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" Goyo
+map <C-g> :Goyo<CR>
+imap <C-g> :Goyo<CR>
 
 " FZF
 nnoremap <silent> <C-p> :Files<CR>
@@ -126,12 +135,6 @@ imap <C-t> <esc>:tabnew<CR>
 
 " Close last open split/tab/window
 map <C-x> <C-w>c
-
-" Emacs like $ ^ bigings
-map <c-e> $
-imap <c-e> <c-o>$
-map <c-g> ^
-imap <c-g> <c-o>^
 
 " Search for string patterns inside files
 map <Leader>a :Ag
