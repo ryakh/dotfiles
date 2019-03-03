@@ -1,0 +1,10 @@
+components/headers
+functions/install.fedora
+functions/pretty_print
+components/essentials.fedora
+components/docker.fedora
+components/rbenv.fedora
+components/rcm
+components/fzf
+components/ctags
+functions/rcup

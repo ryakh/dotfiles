@@ -1,0 +1,17 @@
+pretty_print "Installing HTOP"
+install htop
+
+pretty_print "Installing VIM"
+install vim-enhanced
+install vim-X11
+
+pretty_print "Installing DNF plugins"
+install dnf-plugins-core
+
+pretty_print "Installing ZSH"
+install zsh
+sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
+
+pretty_print "Installing Gnome Tweak Tool"
+install gnome-tweak-tool

@@ -1,0 +1,3 @@
+function install() {
+  sudo dnf -y install $1
+}
