@@ -10,3 +10,4 @@
 
 # Installing
 env RCRC=$HOME/code/dotfiles/rcrc rcup
+git submodule update --init --recursive

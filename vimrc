@@ -56,7 +56,6 @@ let g:goyo_width = '50%'
 let g:goyo_height = '85%'
 let g:goyo_linenr = '1'
 
-
 " }}}
 " KEY BINDINGS {{{
 "
@@ -94,7 +93,7 @@ map <Leader>n :call RenameFile()<CR>
 " will insert tab at beginning of line,
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
-set complete=.,w,t
+set complete=.,w,b
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -109,7 +108,7 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 map <C-s> <esc>:Explore<CR>
 
 " Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules<CR>
+noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --fields=+l<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -214,13 +213,13 @@ if executable("ag")
 endif
 
 " Run tests in docker
-function! DockerTransform(cmd)
-  return('cd /home/ruslan/Code/convertkit-docker; '.a:cmd)
-endfunction
-
-let test#ruby#rspec#executable = 'docker-compose run -e RAILS_ENV=test rails bundle exec rspec'
-let g:test#custom_transformations = {'docker': function('DockerTransform')}
-let g:test#transformation = 'docker'
+" function! DockerTransform(cmd)
+"   return('cd /home/ruslan/Code/convertkit-docker; '.a:cmd)
+" endfunction
+"
+" let test#ruby#rspec#executable = 'docker-compose --file docker-compose-full.yml run -e RAILS_ENV=test app bundle exec rspec'
+" let g:test#custom_transformations = {'docker': function('DockerTransform')}
+" let g:test#transformation = 'docker'
 
 " }}}
 " EDITOR {{{
