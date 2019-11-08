@@ -1,1 +1,2 @@
+pretty_print "Setting up environment"
 RCRC=$HOME/Code/dotfiles/rcrc rcup
