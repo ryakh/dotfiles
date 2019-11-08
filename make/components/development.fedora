@@ -1,2 +1,5 @@
 pretty_print "Installing Mysql libdev"
 install mysql-devel
+
+pretty_print "Installing Postgres libdev"
+install postgresql-devel
