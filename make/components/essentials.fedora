@@ -13,8 +13,8 @@ install dnf-plugins-core
 
 pretty_print "Installing ZSH"
 install zsh
-sudo chsh -s $(which zsh)
-chsh -s $(which zsh)
+sudo chsh -s /bin/zsh
+chsh -s /bin/zsh
 
 pretty_print "Installing Gnome Tweak Tool"
 install gnome-tweak-tool
