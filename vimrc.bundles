@@ -5,7 +5,9 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
+Plug 'Asheq/close-buffers.vim'
 Plug 'danielwe/base16-vim'
+Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
@@ -29,6 +31,5 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/tComment'
-Plug 'w0rp/ale'
 
 call plug#end()

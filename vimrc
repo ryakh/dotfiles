@@ -82,6 +82,8 @@ map <Leader> <Plug>(easymotion-prefix)
 " Better buffer close
 map <Leader>g :BD<CR>
 map <Leader>d :bd<CR>
+map <Leader>D :CloseHiddenBuffers<CR>
+map <Leader>G :CloseOtherBuffers<CR>
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :read !clear; ruby %<CR>
@@ -211,16 +213,6 @@ augroup END
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" Run tests in docker
-" function! DockerTransform(cmd)
-"   return('cd /home/ruslan/Code/convertkit-docker; '.a:cmd)
-" endfunction
-"
-" let test#ruby#rspec#executable = 'docker-compose --file docker-compose-full.yml run -e RAILS_ENV=test app bundle exec rspec'
-" let g:test#custom_transformations = {'docker': function('DockerTransform')}
-" let g:test#transformation = 'docker'
-
 " }}}
 " EDITOR {{{
 "

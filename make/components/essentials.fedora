@@ -15,3 +15,6 @@ chsh -s $(which zsh)
 
 pretty_print "Installing Gnome Tweak Tool"
 install gnome-tweak-tool
+
+pretty_pring "Installing build tools"
+install gcc-c++
