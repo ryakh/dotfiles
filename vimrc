@@ -51,11 +51,6 @@ filetype plugin indent on
 " Always copy to system clipboard
 set clipboard=unnamedplus
 
-" Goyo (focus mode)
-let g:goyo_width = '50%'
-let g:goyo_height = '85%'
-let g:goyo_linenr = '1'
-
 " }}}
 " KEY BINDINGS {{{
 "
@@ -64,10 +59,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-" Goyo
-map <C-g> :Goyo<CR>
-imap <C-g> :Goyo<CR>
 
 " FZF
 nnoremap <silent> <C-p> :Files<CR>
@@ -82,8 +73,6 @@ map <Leader> <Plug>(easymotion-prefix)
 " Better buffer close
 map <Leader>g :BD<CR>
 map <Leader>d :bd<CR>
-map <Leader>D :CloseHiddenBuffers<CR>
-map <Leader>G :CloseOtherBuffers<CR>
 
 " Exuction of current ruby buffer
 nnoremap <Leader>r :read !clear; ruby %<CR>

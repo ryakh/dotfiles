@@ -5,14 +5,12 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'Asheq/close-buffers.vim'
 Plug 'danielwe/base16-vim'
 Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
