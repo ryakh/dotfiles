@@ -1,9 +1,9 @@
-components/headers.fedora
-functions/install.fedora
+components/headers.ubuntu
+functions/install.ubuntu
 functions/pretty_print.ubuntu
-components/essentials.fedora
-components/docker.fedora
-components/rbenv.fedora
+components/essentials.ubuntu
+components/docker.ubuntu
+components/rbenv.ubuntu
 components/rcm.fedora
 components/fzf
 components/ctags

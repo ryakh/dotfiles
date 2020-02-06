@@ -1,0 +1,19 @@
+pretty_print "Installing HTOP"
+install htop
+
+pretty_print "Installing build essentials"
+install build-essential
+
+pretty_print "Installing VIM"
+install vim-gtk
+
+pretty_print "Installing ZSH"
+install zsh
+sudo chsh -s /bin/zsh
+chsh -s /bin/zsh
+
+pretty_print "Installing Gnome Tweak Tool"
+install gnome-tweak-tool
+
+pretty_print "Installing siler saercher"
+install silversearcher-ag
