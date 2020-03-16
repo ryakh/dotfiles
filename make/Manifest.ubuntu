@@ -4,8 +4,10 @@ functions/pretty_print.ubuntu
 components/essentials.ubuntu
 components/docker.ubuntu
 components/rbenv.ubuntu
-components/rcm.fedora
+components/rcm.ubuntu
 components/fzf
+components/yarn.ubuntu
 components/ctags
 components/fnm
+components/development.ubuntu
 functions/rcup
