@@ -1,0 +1,11 @@
+components/headers.manjaro
+functions/install.manjaro
+functions/pretty_print.manjaro
+components/essentials.manjaro
+components/docker.manjaro
+components/rbenv.manjaro
+components/rcm.manjaro
+components/yarn.manjaro
+components/fnm
+components/development.manjaro
+functions/rcup

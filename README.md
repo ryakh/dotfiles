@@ -21,6 +21,27 @@ sudo chmod +x <OS_NAME>
 
 Observer your computer turning awesome.
 
+## Installing Manjaro
+Install build tools:
+```
+sudo pacman -S base-devel
+```
+
+Install Dropbox:
+```
+# Clone AUR package
+git clone https://aur.archlinux.org/dropbox.git
+
+# Import GPG key
+wget https://linux.dropbox.com/fedora/rpm-public-key.asc
+gpg --import rpm-public-key.asc
+
+# Build dropbox AUR
+makepkg -sirc
+```
+
+Proceed with regular make routine.
+
 ## Grub Config
 
 `/etc/default/grub`:

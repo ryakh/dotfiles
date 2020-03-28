@@ -1,0 +1,4 @@
+pretty_print "Installing RCM"
+git clone https://aur.archlinux.org/rcm.git ~/Aur/rcm
+
+cd ~/Aur/rcm && makepkg -sirc --noconfirm && cd -
