@@ -1,5 +1,0 @@
-pretty_print "Installing Mysql libdev"
-install libmysqlclient-dev
-
-pretty_print "Installing PG libdev"
-install libpq-dev

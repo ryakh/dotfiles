@@ -26,3 +26,6 @@ install ctags
 
 pretty_print "Installing unzip"
 install unzip
+
+pretty_print "Installing Yarn"
+install yarn

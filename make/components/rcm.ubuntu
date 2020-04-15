@@ -1,6 +1,0 @@
-pretty_print "Installing RCM"
-
-sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-sudo apt-get update
-
-install rcm

@@ -1,3 +1,0 @@
-pretty_print "Installing RCM"
-sudo dnf -y copr enable seeitcoming/rcm
-install rcm
