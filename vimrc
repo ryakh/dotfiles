@@ -46,7 +46,16 @@ set mouse=
 let test#strategy = "dispatch"
 
 " Indents based on file type
-filetype plugin indent on
+filetype indent on
+
+" Enable plugins based on file type
+filetype plugin on
+
+" Only show list for completion without selecting anything
+set wildmode=list:longest,list:full
+
+" Read from current buffer, all opened and unloaded buffers and tags
+set complete=.,b
 
 " Always copy to system clipboard
 set clipboard=unnamedplus
@@ -83,8 +92,6 @@ map <Leader>n :call RenameFile()<CR>
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
-set wildmode=list:longest,list:full
-set complete=.,w,b
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -95,11 +102,8 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 
-" Open :Ex
-map <C-s> <esc>:Explore<CR>
-
 " Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --fields=+l<CR>
+noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>

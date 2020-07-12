@@ -9,6 +9,7 @@ components/rbenv
 components/rcm
 components/fnm
 components/development
+components/visual
 
 functions/rcup
 functions/fonts
