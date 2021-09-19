@@ -6,7 +6,7 @@ stty start undef
 stty stop undef
 
 # completion
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 for function in ~/.zsh/functions/*; do
@@ -73,15 +73,9 @@ unsetopt CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
-# Rbenv goodness
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
-
 BASE16_SHELL=$HOME/.submodules/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fnm
-export PATH=/home/ruslan/.fnm:$PATH
-eval "`fnm env --multi`"
+. $(brew --prefix asdf)/asdf.sh
