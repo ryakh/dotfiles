@@ -58,7 +58,7 @@ set wildmode=list:longest,list:full
 set complete=.,b
 
 " Always copy to system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " }}}
 " KEY BINDINGS {{{
