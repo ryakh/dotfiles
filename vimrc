@@ -18,7 +18,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
-set foldmethod=manual
+set foldmethod=syntax
 set nofoldenable
 
 " Tabs and spaces
@@ -55,7 +55,7 @@ filetype plugin on
 set wildmode=list:longest,list:full
 
 " Read from current buffer, all opened and unloaded buffers and tags
-set complete=.,b
+set complete=.,b,w
 
 " Always copy to system clipboard
 set clipboard=unnamed
@@ -103,7 +103,8 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 
 " Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
+" noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
+noremap <Leader>ctags -R --output-format=json --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths) -f .tags<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -132,6 +133,9 @@ map <C-x> <C-w>c
 
 " Search for string patterns inside files
 map <Leader>a :Ag
+
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " }}}
 " VISUAL {{{
@@ -223,10 +227,10 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " CtrlP settings
 let g:ctrlp_show_hidden=1
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 1
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_match_window='bottom,order:ttb'
+let g:ctrlp_switch_buffer=1
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
 
 " ALE Syntax checkers
 let g:ale_linters = {

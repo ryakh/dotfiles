@@ -78,4 +78,23 @@ BASE16_SHELL=$HOME/.submodules/base16-shell/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
+
+# use vim as the visual editor
+export VISUAL=vim
+export EDITOR=$VISUAL
+
+# ensure dotfiles bin directory is loaded first
+export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
+# mkdir .git/safe in the root of repositories you trust
+export PATH=".git/safe/../../bin:$PATH"
+
+# Fuzzy finder
+export FZF_DEFAULT_COMMAND='ag --nocolor --hidden --ignore node_modules --ignore tmp -g ""'
+
+# Mysql-client location
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# Postgres dev tools for mac
+export PATH="/usr/local/opt/libpq/bin:$PATH"
