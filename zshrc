@@ -73,11 +73,14 @@ unsetopt CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
+# base16 shell
 BASE16_SHELL=$HOME/.submodules/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# FZF fuzzy searcher
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load ASDF
 . $(brew --prefix asdf)/libexec/asdf.sh
 
 # use vim as the visual editor
@@ -94,7 +97,7 @@ export PATH=".git/safe/../../bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --nocolor --hidden --ignore node_modules --ignore tmp -g ""'
 
 # Mysql-client location
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # Postgres dev tools for mac
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

@@ -4,9 +4,20 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-if executable('ag')
+if executable("ag")
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+" Nvim providers
+let g:ruby_host_prog = "~/.asdf/installs/ruby/3.1.1/bin/neovim-ruby-host"
+let g:node_host_prog = "~/.asdf/installs/nodejs/18.8.0/.npm/bin/neovim-node-host"
+let g:python3_host_prog = "~/.asdf/installs/python/3.10.6/bin/python"
+
+" Code completion plugins for CoC
+let g:coc_global_extensions = [
+      \ "coc-solargraph",
+      \ "coc-tsserver"
+      \ ]
 
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
@@ -103,8 +114,7 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
 
 " Index ctags from any project, including those outside Rails
-" noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
-noremap <Leader>ctags -R --output-format=json --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths) -f .tags<CR>
+noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>

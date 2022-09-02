@@ -4,6 +4,11 @@ Something something dotfiles. You know, for VIM and stuff.
 # Installing
 First good step is to grant your user superpowers:
 
+1. Ruby: install 3.1.1 and install gem: `gem install neovim`
+2. Node: install 18.8.0 and install package: `npm install -g neovim`
+3. Python: install 3.10.6 and install package: `pip install --user --upgrade pynvim`
+4. Solargraph: `gem install solargraph`
+
 ```
 sudo visudo
 
