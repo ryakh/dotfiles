@@ -1,6 +1,0 @@
-ssh-stag() {
-  local staging_ip
-  staging_ip=( $(ssh staging-deploy 'cd ~/convertkit-deploy; ansible all --list --limit tag_CodeDeployApp_convertkit | awk "NR > 2 { print }" | shuf -n 1 | tr -d " "') )
-
-  ssh -t $staging_ip 'docker_image=$(sudo docker ps -aqf "name=puma|sidekiq"); sudo docker exec -ti $docker_image bundle exec rails c'
-}

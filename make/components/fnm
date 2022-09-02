@@ -1,2 +1,0 @@
-pretty_print "Installing FNM"
-curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash -s -- --skip-shell

@@ -38,9 +38,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" Autocomplete for command menu
-set wildmenu
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -53,20 +50,11 @@ set tags=./tags
 " Disable mouse
 set mouse=
 
-" Run tests in tmux
-let test#strategy = "dispatch"
-
 " Indents based on file type
 filetype indent on
 
 " Enable plugins based on file type
 filetype plugin on
-
-" Only show list for completion without selecting anything
-set wildmode=list:longest,list:full
-
-" Read from current buffer, all opened and unloaded buffers and tags
-set complete=.,b,w
 
 " Always copy to system clipboard
 set clipboard=unnamed
@@ -119,11 +107,6 @@ noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" vim-rspec mappings
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>s :TestFile<CR>
-nmap <silent> <leader>l :TestLast<CR>
-
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -143,9 +126,6 @@ map <C-x> <C-w>c
 
 " Search for string patterns inside files
 map <Leader>a :Ag
-
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " }}}
 " VISUAL {{{
@@ -241,10 +221,5 @@ let g:ctrlp_match_window='bottom,order:ttb'
 let g:ctrlp_switch_buffer=1
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
-
-" ALE Syntax checkers
-let g:ale_linters = {
-\   'ruby': ['rubocop']
-\}
 
 " vim:foldmethod=marker:foldlevel=0

@@ -18,23 +18,3 @@ alias -g ONE="| awk '{ print \$1}'"
 alias gci="git pull --rebase && rspec && git push"
 alias gl="git log --pretty=oneline --abbrev-commit"
 alias gg="git log --graph --oneline --all"
-
-# Bundler
-alias b="bundle"
-
-# Tests and Specs
-alias t="ruby -I test"
-
-# Rubygems
-alias gi="gem install"
-alias giv="gem install -v"
-
-# Rails
-alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
-alias m="migrate"
-alias rk="noglob rake"
-alias rake="noglob rake"
-alias s="rspec"
-
-# Elasticsearch
-alias elastic="ES_JAVA_OPTS='-Xms64m -Xmx256m' elasticsearch"

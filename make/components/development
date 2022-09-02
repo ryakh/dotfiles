@@ -1,5 +1,0 @@
-pretty_print "Installing MySQL dev tools"
-install mariadb-libs
-
-pretty_print "Installing Postgres dev tools"
-install postgresql-libs

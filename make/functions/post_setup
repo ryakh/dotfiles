@@ -1,8 +1,0 @@
-pretty_print "Enabling ssh-agent service"
-journalctl --user enable ssh-agent.service
-
-pretty_print "Enabling askpass"
-sudo chmod u+x ~/.config/plasma-workspace/env/askpass.sh
-
-pretty_print "Enabling ssh-add"
-sudo chmod u+x ~/.config/autostart-scripts/ssh-add.sh

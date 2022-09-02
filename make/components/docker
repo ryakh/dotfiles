@@ -1,9 +1,0 @@
-pretty_print "Installing docker"
-
-install docker
-sudo systemctl enable docker
-sudo systemctl start docker
-
-sudo usermod -aG docker $USER
-
-install docker-compose

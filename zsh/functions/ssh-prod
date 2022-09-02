@@ -1,6 +1,0 @@
-ssh-prod() {
-  local prod_ip
-  prod_ip=( $(ssh production-deploy 'cd ~/convertkit-deploy; ansible all --list --limit tag_CodeDeployApp_convertkit | awk "NR > 2 { print }" | shuf -n 1 | tr -d " "') )
-
-  ssh -t $prod_ip "sudo su -c 'cd /srv/ckapp/current && make console'"
-}
