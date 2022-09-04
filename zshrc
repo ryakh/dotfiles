@@ -73,10 +73,6 @@ unsetopt CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
-# base16 shell
-BASE16_SHELL=$HOME/.submodules/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
 # FZF fuzzy searcher
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

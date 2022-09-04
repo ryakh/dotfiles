@@ -31,6 +31,8 @@ set laststatus=2  " Always display the status line
 set modelines=1   " Allow last line of the file to be modeline
 set foldmethod=syntax
 set nofoldenable
+set updatetime=300
+set signcolumn=yes
 
 " Tabs and spaces
 set tabstop=2
@@ -88,18 +90,22 @@ nnoremap <Leader>r :read !clear; ruby %<CR>
 " Rename currently opened file
 map <Leader>n :call RenameFile()<CR>
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+" Tab completion for coc
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<CR>
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
 " Index ctags from any project, including those outside Rails
 noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
@@ -130,17 +136,25 @@ map <Leader>a :Ag
 " }}}
 " VISUAL {{{
 "
-" Load colorscheme from config file
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 " Display extra whitespace
 set list listchars=nbsp:¬,tab:»·,trail:·
 
 " Color scheme
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 syntax enable
+colorscheme gruvbox
+set background=dark
+
+autocmd VimEnter,ColorScheme * hi! link CocMenuSel PMenuSel
+autocmd VimEnter,ColorScheme * hi! link CocSearch Identifier
 
 " Cancel visual line wrapping
 set nowrap
@@ -152,9 +166,6 @@ set winminwidth=5
 " NETRW config
 let g:netrw_banner = 0
 let g:netrw_browse_split = 0
-
-" Disable ALE highlights
-let g:ale_set_highlights = 0
 
 "}}}
 " FUNCTIONS {{{
