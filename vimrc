@@ -107,8 +107,11 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
-" Index ctags from any project, including those outside Rails
-noremap <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --extra=1 --fields=+l --languages=ruby . $(bundle list --paths)<CR>
+" Jump to definition and usage
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -132,6 +135,11 @@ map <C-x> <C-w>c
 
 " Search for string patterns inside files
 map <Leader>a :Ag
+
+" Ranger file navigation
+let g:ranger_map_keys = 0
+map <Leader>x :RangerWorkingDirectory<CR>
+map - :Ranger<CR>
 
 " }}}
 " VISUAL {{{
@@ -232,5 +240,9 @@ let g:ctrlp_match_window='bottom,order:ttb'
 let g:ctrlp_switch_buffer=1
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
+
+" Vim-Ruby code style
+let g:ruby_indent_assignment_style = 'variable'
+
 
 " vim:foldmethod=marker:foldlevel=0
