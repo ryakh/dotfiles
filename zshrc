@@ -73,6 +73,9 @@ unsetopt CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
+# Load brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # FZF fuzzy searcher
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
