@@ -19,7 +19,7 @@ return {
     lspconfig["emmet_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "javascript" },
     })
 
     lspconfig["graphql"].setup({
@@ -33,9 +33,12 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["solargraph"].setup({
+    lspconfig["ruby_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      cmd = {
+        "/Users/ruslan/.asdf/shims/ruby-lsp"
+      },
     })
 
     lspconfig["tailwindcss"].setup({

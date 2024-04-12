@@ -26,6 +26,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Display extra whitespace and tabs
+vim.opt.list = true
 vim.opt.listchars = { nbsp = "¬", tab = "»·", trail = "·" }
 
 -- Hide end-of-buffer characters
@@ -34,4 +35,8 @@ vim.opt.fillchars = { eob = " " }
 -- Search settings
 vim.opt.ignorecase = true
 
-vim.o.background = ""
+-- Size of the line number gutter
+vim.opt.nuw = 4
+
+-- Size of the column for icons and stuff
+vim.o.signcolumn = "yes:2"

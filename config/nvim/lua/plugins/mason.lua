@@ -17,7 +17,7 @@ return {
         "emmet_ls",
         "graphql",
         "html",
-        "solargraph",
+        "ruby_ls",
         "tailwindcss",
         "tsserver",
       },
