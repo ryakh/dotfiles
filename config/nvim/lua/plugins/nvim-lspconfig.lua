@@ -1,3 +1,4 @@
+-- LSP stuff
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -33,11 +34,10 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["ruby_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      cmd = {
-        "/Users/ruslan/.asdf/shims/ruby-lsp"
+    lspconfig["ruby_lsp"].setup({
+      init_options = {
+        formatter = "standard",
+        linters = { "standard" },
       },
     })
 

@@ -1,3 +1,4 @@
+-- Better way to navigate and search files
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",

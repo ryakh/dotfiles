@@ -1,3 +1,5 @@
+-- Automatically inserts a closing pair for a paired delimiter characters like
+-- brackets, paranthesis or quotes
 return {
   "windwp/nvim-autopairs",
   event = "InsertEnter",

@@ -1,3 +1,4 @@
+-- File manager in a buffer
 return {
   "stevearc/oil.nvim",
   opts = {},

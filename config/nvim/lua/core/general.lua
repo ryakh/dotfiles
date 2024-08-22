@@ -2,9 +2,10 @@
 vim.opt.mouse = ""
 
 -- Line numbers & cursor
-vim.opt.relativenumber = true -- show relative line numbers
-vim.opt.number = true -- show absolute line number under cursor
+-- vim.opt.relativenumber = true -- show relative line numbers
+-- vim.opt.number = true -- show absolute line number under cursor
 vim.opt.cursorline = true
+vim.opt.number = true
 
 -- Tabs & spaces
 vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -40,3 +41,13 @@ vim.opt.nuw = 4
 
 -- Size of the column for icons and stuff
 vim.o.signcolumn = "yes:2"
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    vim.lsp.start {
+      name = "rubocop",
+      cmd = { "bundle", "exec", "rubocop", "--lsp" },
+    }
+  end,
+})

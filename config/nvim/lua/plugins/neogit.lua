@@ -1,3 +1,4 @@
+-- Better git management and integration
 return {
   "NeogitOrg/neogit",
   dependencies = {

@@ -1,3 +1,4 @@
+-- What it says on the tin
 return {
   "rebelot/kanagawa.nvim",
   priority = 1000,

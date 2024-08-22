@@ -1,3 +1,4 @@
+-- Display git signs in gutter column
 return {
   "lewis6991/gitsigns.nvim",
   config = function()

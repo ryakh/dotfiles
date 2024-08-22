@@ -1,3 +1,4 @@
+-- LSP server manager
 return {
   "williamboman/mason.nvim",
   dependencies = {
@@ -17,7 +18,6 @@ return {
         "emmet_ls",
         "graphql",
         "html",
-        "ruby_ls",
         "tailwindcss",
         "tsserver",
       },

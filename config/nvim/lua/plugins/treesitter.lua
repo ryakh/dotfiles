@@ -1,3 +1,4 @@
+-- Parse current file as AST
 return {
   "nvim-treesitter/nvim-treesitter",
 

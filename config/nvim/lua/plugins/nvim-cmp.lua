@@ -1,3 +1,4 @@
+-- LSP stuff
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
