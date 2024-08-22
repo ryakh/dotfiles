@@ -2,8 +2,8 @@
 vim.opt.mouse = ""
 
 -- Line numbers & cursor
--- vim.opt.relativenumber = true -- show relative line numbers
--- vim.opt.number = true -- show absolute line number under cursor
+vim.opt.relativenumber = true -- show relative line numbers
+vim.opt.number = true -- show absolute line number under cursor
 vim.opt.cursorline = true
 vim.opt.number = true
 
