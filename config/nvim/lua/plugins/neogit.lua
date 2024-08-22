@@ -12,6 +12,6 @@ return {
       disable_line_numbers = false,
     })
 
-    vim.keymap.set("n", "<Leader>g", "<cmd>Neogit<cr>")
+    vim.keymap.set("n", "<Leader>gg", "<cmd>Neogit<cr>")
   end
 }

@@ -25,6 +25,18 @@ return {
       current_line_blame_formatter = "<abbrev_sha> | <author_time:%Y-%m-%d> | <author> | <summary>",
 
       signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+
+      on_attach = function(bufnr)
+        local gitsigns = require("gitsigns")
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        map("n", "<Leader>gb", gitsigns.blame)
+      end
     })
   end
 }
