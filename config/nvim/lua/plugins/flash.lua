@@ -9,7 +9,7 @@ return {
     }
   },
   keys = {
-    { "<Leader>/", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "<Leader>?", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "<Leader>f", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "<Leader>F", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
   },
 }
