@@ -1,0 +1,10 @@
+[env]
+term = "xterm-256color"
+
+[window]
+padding = { x = 20, y = 20 }
+decorations = "Buttonless"
+
+[font]
+size = 13
+normal = { family = "Iosevka Term", style = "Light" }
