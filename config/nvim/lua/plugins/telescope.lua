@@ -24,7 +24,7 @@ return {
 
     telescope.load_extension("fzf");
 
-    vim.keymap.set("n", "<Leader>f", "<cmd>Telescope find_files<cr>")
+    vim.keymap.set("n", "<Leader>p", "<cmd>Telescope find_files<cr>")
     vim.keymap.set("n", "<Leader>o", "<cmd>Telescope buffers<cr>")
     vim.keymap.set("n", "<Leader>s", "<cmd>Telescope live_grep<cr>")
     vim.keymap.set("n", "<Leader>c", "<cmd>Telescope grep_string<cr>")
