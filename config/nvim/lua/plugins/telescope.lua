@@ -28,5 +28,7 @@ return {
     vim.keymap.set("n", "<Leader>o", "<cmd>Telescope buffers<cr>")
     vim.keymap.set("n", "<Leader>s", "<cmd>Telescope live_grep<cr>")
     vim.keymap.set("n", "<Leader>c", "<cmd>Telescope grep_string<cr>")
+
+    vim.keymap.set("", "<Leader>gc", "<cmd>Telescope git_bcommits<cr>")
   end
 }
