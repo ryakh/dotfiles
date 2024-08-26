@@ -51,7 +51,8 @@ return {
       on_attach = on_attach,
     })
 
-    vim.keymap.set("n", "<Leader>r", "<cmd>Telescope lsp_references<CR>") -- show definition, references
-    vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition) -- go to declaration
+    vim.keymap.set("n", "<Leader>dr", "<cmd>Telescope lsp_references<cr>") -- show definition, references
+    vim.keymap.set("n", "<Leader>ds", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>") -- go to declaration
+    vim.keymap.set("n", "<Leader>dd", "<cmd>lua vim.lsp.buf.hover()<cr>") -- show docs
   end
 }
