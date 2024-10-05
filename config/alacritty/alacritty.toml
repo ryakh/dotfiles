@@ -8,3 +8,6 @@ decorations = "Buttonless"
 [font]
 size = 13
 normal = { family = "Iosevka Term", style = "Light" }
+
+[selection]
+save_to_clipboard = true
