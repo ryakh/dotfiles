@@ -19,7 +19,7 @@ return {
         "graphql",
         "html",
         "tailwindcss",
-        "tsserver",
+        "ts_ls"
       },
 
       -- Auto-install configured servers (with lspconfig)
