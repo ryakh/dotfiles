@@ -41,13 +41,3 @@ vim.opt.nuw = 4
 
 -- Size of the column for icons and stuff
 vim.o.signcolumn = "yes:2"
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ruby",
-  callback = function()
-    vim.lsp.start {
-      name = "rubocop",
-      cmd = { "bundle", "exec", "rubocop", "--lsp" },
-    }
-  end,
-})
