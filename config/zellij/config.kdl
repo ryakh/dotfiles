@@ -1,0 +1,22 @@
+theme "catppuccin-mocha"
+
+keybinds {
+  unbind "Ctrl g"
+  unbind "Ctrl q"
+  unbind "Ctrl t"
+  unbind "Ctrl h"
+
+  normal {
+    unbind "Ctrl q"
+    unbind "Ctrl t"
+    unbind "Ctrl h"
+
+    bind "Ctrl u" { SwitchToMode "locked"; }
+    bind "Ctrl a" { SwitchToMode "tab"; }
+    bind "Ctrl m" { SwitchToMode "move"; }
+  }
+
+  locked {
+    bind "Ctrl u" { SwitchToMode "normal"; }
+  }
+}
