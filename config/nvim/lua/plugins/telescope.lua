@@ -24,11 +24,11 @@ return {
 
     telescope.load_extension("fzf");
 
-    vim.keymap.set("n", "<Leader>p", "<cmd>Telescope find_files<cr>")
-    vim.keymap.set("n", "<Leader>o", "<cmd>Telescope buffers<cr>")
-    vim.keymap.set("n", "<Leader>s", "<cmd>Telescope live_grep<cr>")
-    vim.keymap.set("n", "<Leader>c", "<cmd>Telescope grep_string<cr>")
+    vim.keymap.set("n", "<Leader>tp", "<cmd>Telescope find_files<cr>")
+    vim.keymap.set("n", "<Leader>to", "<cmd>Telescope buffers<cr>")
+    vim.keymap.set("n", "<Leader>ts", "<cmd>Telescope live_grep<cr>")
+    vim.keymap.set("n", "<Leader>tc", "<cmd>Telescope grep_string<cr>")
 
-    vim.keymap.set("", "<Leader>gc", "<cmd>Telescope git_bcommits<cr>")
+    vim.keymap.set("n", "<Leader>tg", "<cmd>Telescope git_bcommits<cr>")
   end
 }
