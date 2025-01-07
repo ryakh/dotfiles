@@ -16,10 +16,6 @@ done
 # automatically enter directories without cd
 setopt auto_cd
 
-# makes color constants available
-autoload -U colors
-colors
-
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"

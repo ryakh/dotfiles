@@ -1,5 +1,5 @@
 # Configure looks of the prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
+# export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 
 # Increase history size
 export HISTSIZE=4096
