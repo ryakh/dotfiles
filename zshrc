@@ -16,14 +16,11 @@ autoload -U colors
 colors
 
 # Change prompt
-export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '
+export PS1="$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] "
 
 #
 # -= End of prompt setting =-
 #
-
-# Load our own completion functions
-fpath=(~/.zsh/completion $fpath)
 
 # disable flow control to enable C-s in vim
 stty start undef
@@ -32,10 +29,6 @@ stty stop undef
 # completion
 autoload -Uz compinit
 compinit
-
-for function in ~/.zsh/functions/*; do
-  source $function
-done
 
 # automatically enter directories without cd
 setopt auto_cd
