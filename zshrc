@@ -1,4 +1,28 @@
-# load our own completion functions
+#
+# -= Start of prompt setting =-
+# (This part has to come from .zshrc as zellij is ifnoring zsh login)
+#
+
+# Get current branch name if inside git repo
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "[%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
+  fi
+}
+
+# Makes color constants available
+autoload -U colors
+colors
+
+# Change prompt
+export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '
+
+#
+# -= End of prompt setting =-
+#
+
+# Load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
 # disable flow control to enable C-s in vim
