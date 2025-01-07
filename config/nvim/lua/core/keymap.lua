@@ -14,6 +14,7 @@ vim.keymap.set("i", "<C-t>", "<esc>:tabnew<CR>")
 
 -- Leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Close current buffer
 vim.keymap.set("n", "<Leader><Leader>", ":bd<CR>")
