@@ -1,22 +1,12 @@
-#
-# -= Start of prompt setting =-
-# (This part has to come from .zshrc as zellij is ifnoring zsh login)
-#
-
-# Get current branch name if inside git repo
-git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -n $ref ]]; then
-    echo "[%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
-  fi
-}
+# Load ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Makes color constants available
 autoload -U colors
 colors
 
 # Change prompt
-export PS1="$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] "
+export PS1="[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] "
 
 #
 # -= End of prompt setting =-
@@ -76,3 +66,6 @@ unsetopt CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"

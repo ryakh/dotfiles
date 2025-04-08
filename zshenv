@@ -8,10 +8,8 @@ export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
 
 # Load homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Load ASDF
-. $(brew --prefix asdf)/libexec/asdf.sh
 
 # Use nvim as the visual and default editor
 export VISUAL=nvim
@@ -31,3 +29,12 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # Postgres dev tools for mac
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+export AUTO_BUNDLE=1
+export AUTO_MIGRATIONS=1
+
+source ~/.secrets/anthropic
+source ~/.secrets/kagi
+
+# Load Rust
+. "$HOME/.cargo/env"
