@@ -3,13 +3,20 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 
 default-root-container-layout = "tiles"
 
+start-at-login = true
+
+accordion-padding = 20
+
+on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
+on-focus-changed = ["move-mouse window-lazy-center"]
+
 [gaps]
 inner.horizontal = 8
 inner.vertical = 8
-outer.left = 50
-outer.right = 50
-outer.top = 20
-outer.bottom = 30
+outer.left = 35
+outer.right = 35
+outer.top = 10
+outer.bottom = 40
 
 [mode.main.binding]
 alt-slash = "layout tiles horizontal vertical"
@@ -59,4 +66,3 @@ alt-shift-s = "mode service"
 esc = ["reload-config", "mode main"]
 r = ["flatten-workspace-tree", "mode main"] # reset layout
 f = ["layout floating tiling", "mode main"] # Toggle between floating and tiling layout
-
