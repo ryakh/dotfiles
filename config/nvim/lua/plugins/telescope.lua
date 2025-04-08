@@ -4,7 +4,8 @@ return {
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-telescope/telescope-live-grep-args.nvim"
   },
   config = function()
     local telescope = require("telescope")
@@ -26,7 +27,7 @@ return {
 
     vim.keymap.set("n", "<Leader>tp", "<cmd>Telescope find_files<cr>")
     vim.keymap.set("n", "<Leader>to", "<cmd>Telescope buffers<cr>")
-    vim.keymap.set("n", "<Leader>ts", "<cmd>Telescope live_grep<cr>")
+    vim.keymap.set("n", "<Leader>ts", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
     vim.keymap.set("n", "<Leader>tc", "<cmd>Telescope grep_string<cr>")
 
     vim.keymap.set("n", "<Leader>tg", "<cmd>Telescope git_bcommits<cr>")
