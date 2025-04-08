@@ -41,3 +41,5 @@ vim.opt.nuw = 4
 
 -- Size of the column for icons and stuff
 vim.o.signcolumn = "yes:2"
+
+vim.opt.laststatus = 3
