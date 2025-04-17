@@ -20,7 +20,6 @@ return {
         "html",
         "tailwindcss",
         "ts_ls",
-        "ruby_lsp"
       },
 
       -- Auto-install configured servers (with lspconfig)
