@@ -43,3 +43,10 @@ vim.opt.nuw = 4
 vim.o.signcolumn = "yes:2"
 
 vim.opt.laststatus = 3
+
+-- Enable diagnostics text
+vim.diagnostic.config(
+  {
+    virtual_text = true
+  }
+)
