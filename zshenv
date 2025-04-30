@@ -33,8 +33,12 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export AUTO_BUNDLE=1
 export AUTO_MIGRATIONS=1
 
-source ~/.secrets/anthropic
-source ~/.secrets/kagi
+# Source all files from ~/.secrets directory
+if [ -d "$HOME/.secrets" ]; then
+  for file in "$HOME/.secrets"/*; do
+    [ -f "$file" ] && source "$file"
+  done
+fi
 
 # Load Rust
 . "$HOME/.cargo/env"
