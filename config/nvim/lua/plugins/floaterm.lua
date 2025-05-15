@@ -6,7 +6,6 @@ return {
     vim.g.floaterm_height = 0.95
   end,
   config = function()
-    vim.keymap.set("n", "<leader>gg", "<cmd>FloatermNew lazygit<cr>")
     vim.keymap.set("n", "<leader>rs", "<cmd>FloatermNew bundle exec rspec %<cr>")
   end
 }
