@@ -20,6 +20,8 @@ return {
         "html",
         "tailwindcss",
         "ts_ls",
+        "yamlls",
+        "lua_ls",
       },
 
       -- Auto-install configured servers (with lspconfig)

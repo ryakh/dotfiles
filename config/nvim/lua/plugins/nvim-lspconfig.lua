@@ -88,6 +88,20 @@ return {
       }
     })
 
+    vim.lsp.enable("yamlls")
+    vim.lsp.config("yamlls", {
+      settings = {
+        capabilities = capabilities,
+      }
+    })
+
+    vim.lsp.enable("lua_ls")
+    vim.lsp.config("lua_ls", {
+      settings = {
+        capabilities = capabilities,
+      }
+    })
+
     vim.keymap.set("n", "<Leader>dr", "<cmd>Telescope lsp_references<cr>") -- show definition, references
     vim.keymap.set("n", "<Leader>ds", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>") -- go to declaration
     vim.keymap.set("n", "<Leader>dd", "<cmd>lua vim.lsp.buf.hover()<cr>") -- show docs
