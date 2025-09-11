@@ -4,8 +4,8 @@ padding = { x = 20, y = 20 }
 decorations = "Buttonless"
 
 [font]
-size = 13
-normal = { family = "Iosevka Term", style = "Light" }
+size = 15
+normal = { family = "IosevkaTerm Nerd Font", style = "Light" }
 
 [selection]
 save_to_clipboard = true
