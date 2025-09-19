@@ -7,5 +7,7 @@ return {
   end,
   config = function()
     vim.keymap.set("n", "<leader>rs", "<cmd>FloatermNew bundle exec rspec %<cr>")
+    vim.keymap.set("n", "<leader>rt", "<cmd>FloatermNew bundle exec rails test<cr>")
+    vim.keymap.set("n", "<leader>rb", "<cmd>FloatermNew bundle exec rubocop<cr>")
   end
 }
