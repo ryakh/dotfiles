@@ -5,100 +5,80 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
   },
-  init = function()
+  config = function()
+    local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    vim.lsp.enable("cssls")
-    vim.lsp.config("cssls", {
-      settings = {
-        ["cssls"] = {
-          capabilities = capabilities,
-        },
-      },
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
     })
 
-    vim.lsp.enable("ruby_lsp")
-    vim.lsp.config("ruby_lsp", {
+    lspconfig.ruby_lsp.setup({
       cmd = { "/Users/ruslan/.asdf/shims/ruby-lsp" },
-      settings = {
-        ["ruby_lsp"] = {
-          capabilities = capabilities,
-          init_options = {
-            formatter = "standard",
-            linters = {
-              "standard"
-            },
-          },
+      capabilities = capabilities,
+      init_options = {
+        formatter = "standard",
+        linters = {
+          "standard"
         },
       },
     })
 
-    vim.lsp.enable("emmet_ls")
-    vim.lsp.config("emmet_ls", {
-      settings = {
-        capabilities = capabilities,
-        filetypes = {
-          "css",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "less",
-          "sass",
-          "scss",
-          "typescriptreact",
-        },
-      }
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
+      filetypes = {
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "less",
+        "sass",
+        "scss",
+        "typescriptreact",
+      },
     })
 
-    vim.lsp.enable("graphql")
-    vim.lsp.config("graphql", {
-      settings = {
-        capabilities = capabilities,
-        filetypes = {
-          "gql",
-          "graphql",
-          "javascriptreact",
-          "svelte",
-          "typescriptreact",
-        },
-      }
+    lspconfig.graphql.setup({
+      capabilities = capabilities,
+      filetypes = {
+        "gql",
+        "graphql",
+        "javascriptreact",
+        "svelte",
+        "typescriptreact",
+      },
     })
 
-    vim.lsp.enable("tailwindcss")
-    vim.lsp.config("tailwindcss", {
+    lspconfig.tailwindcss.setup({
       cmd = { "/Users/ruslan/.asdf/shims/tailwindcss-language-server" },
-      settings = {
-        capabilities = capabilities,
-        filetypes = {
-          "css",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-        },
-      }
+      capabilities = capabilities,
+      filetypes = {
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+      },
     })
 
-    vim.lsp.enable("ts_ls")
-    vim.lsp.config("ts_ls", {
-      settings = {
-        capabilities = capabilities,
-      }
+    lspconfig.ts_ls.setup({
+      capabilities = capabilities,
     })
 
-    vim.lsp.enable("yamlls")
-    vim.lsp.config("yamlls", {
-      settings = {
-        capabilities = capabilities,
-      }
+    lspconfig.yamlls.setup({
+      capabilities = capabilities,
     })
 
-    vim.lsp.enable("lua_ls")
-    vim.lsp.config("lua_ls", {
+    lspconfig.lua_ls.setup({
+      capabilities = capabilities,
       settings = {
-        capabilities = capabilities,
+        Lua = {
+          diagnostics = {
+            globals = { "vim" }
+          }
+        }
       }
     })
 
