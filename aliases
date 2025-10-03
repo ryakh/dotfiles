@@ -1,18 +1,18 @@
 # Unix
 alias tlf="tail -f"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='cd ../..'
-alias ls='ls -G'
-alias l='ls'
-alias ll='ls -al'
-alias lh='ls -Alh'
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias ...="cd ../.."
+alias ls="ls -G"
+alias l="ls"
+alias ll="eza -1 -l --icons=always -a -o"
+alias lh="ls -Alh"
 alias e="$EDITOR"
 alias v="$VISUAL"
-alias -g G='| grep'
-alias -g M='| less'
-alias -g L='| wc -l'
-alias -g ONE="| awk '{ print \$1}'"
+alias -g G="| grep"
+alias -g M="| less"
+alias -g L="| wc -l"
+alias -g ONE="| awk "{ print \$1}""
 
 # git
 alias gci="git pull --rebase && rspec && git push"
