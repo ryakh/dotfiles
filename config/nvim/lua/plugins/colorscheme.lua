@@ -1,13 +1,13 @@
 -- What it says on the tin
 return {
-  "catppuccin/nvim",
+  "rebelot/kanagawa.nvim",
   priority = 1000,
   config = function()
-    require("catppuccin").setup({
-      flavour = "mocha",
-    })
-  end,
-  init = function()
-    vim.cmd.colorscheme "catppuccin"
+    theme = require("kanagawa")
+
+    -- Visual apprance
+    vim.opt.termguicolors = true
+
+    theme.load("wave")
   end
 }

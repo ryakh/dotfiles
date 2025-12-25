@@ -44,7 +44,6 @@ bindkey "^P" history-search-backward
 bindkey "^K" kill-line
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # expand functions in the prompt
 setopt prompt_subst

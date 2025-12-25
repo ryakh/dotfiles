@@ -8,7 +8,7 @@ start-at-login = true
 accordion-padding = 70
 
 after-startup-command = [
-  # "exec-and-forget borders"
+  "exec-and-forget borders"
 ]
 
 [gaps]
@@ -20,58 +20,48 @@ outer.top = 15
 outer.bottom = 25
 
 [mode.main.binding]
-ctrl-comma = "layout tiles horizontal vertical"
-ctrl-period = "layout accordion vertical horizontal"
+alt-comma = "layout tiles horizontal vertical"
+alt-period = "layout accordion vertical horizontal"
 
-ctrl-left = "focus left"
-ctrl-down = "focus down"
-ctrl-up = "focus up"
-ctrl-right = "focus right"
+alt-h = "focus left"
+alt-j = "focus down"
+alt-k = "focus up"
+alt-l = "focus right"
 
-ctrl-shift-left = "move left"
-ctrl-shift-down = "move down"
-ctrl-shift-up = "move up"
-ctrl-shift-right = "move right"
+alt-shift-h = "move left"
+alt-shift-j = "move down"
+alt-shift-k = "move up"
+alt-shift-l = "move right"
 
-ctrl-alt-left = ["join-with left", "mode main"]
-ctrl-alt-down = ["join-with down", "mode main"]
-ctrl-alt-up = ["join-with up", "mode main"]
-ctrl-alt-right = ["join-with right", "mode main"]
+alt-ctrl-h = ["join-with left", "mode main"]
+alt-ctrl-j = ["join-with down", "mode main"]
+alt-ctrl-k = ["join-with up", "mode main"]
+alt-ctrl-l = ["join-with right", "mode main"]
 
-ctrl-minus = "resize smart -200"
-ctrl-equal = "resize smart +200"
+alt-minus = "resize smart -200"
+alt-equal = "resize smart +200"
 
-ctrl-1 = "workspace 1"
-ctrl-2 = "workspace 2"
-ctrl-3 = "workspace 3"
-ctrl-4 = "workspace 4"
-ctrl-5 = "workspace 5"
-ctrl-6 = "workspace 6"
-ctrl-7 = "workspace 7"
-ctrl-8 = "workspace 8"
-ctrl-9 = "workspace 9"
-ctrl-t = "workspace Terminal"
-ctrl-m = "workspace Music"
+alt-1 = "workspace 1"
+alt-2 = "workspace 2"
+alt-3 = "workspace 3"
+alt-4 = "workspace 4"
+alt-5 = "workspace 5"
+alt-6 = "workspace 6"
+alt-7 = "workspace 7"
+alt-8 = "workspace 8"
+alt-9 = "workspace 9"
 
-ctrl-shift-1 = "move-node-to-workspace 1"
-ctrl-shift-2 = "move-node-to-workspace 2"
-ctrl-shift-3 = "move-node-to-workspace 3"
-ctrl-shift-4 = "move-node-to-workspace 4"
-ctrl-shift-5 = "move-node-to-workspace 5"
-ctrl-shift-6 = "move-node-to-workspace 6"
-ctrl-shift-7 = "move-node-to-workspace 7"
-ctrl-shift-8 = "move-node-to-workspace 8"
-ctrl-shift-9 = "move-node-to-workspace 9"
+alt-shift-1 = "move-node-to-workspace 1"
+alt-shift-2 = "move-node-to-workspace 2"
+alt-shift-3 = "move-node-to-workspace 3"
+alt-shift-4 = "move-node-to-workspace 4"
+alt-shift-5 = "move-node-to-workspace 5"
+alt-shift-6 = "move-node-to-workspace 6"
+alt-shift-7 = "move-node-to-workspace 7"
+alt-shift-8 = "move-node-to-workspace 8"
+alt-shift-9 = "move-node-to-workspace 9"
 
-ctrl-shift-s = "mode service"
-
-[[on-window-detected]]
-if.app-id = "org.alacritty"
-run = "move-node-to-workspace Terminal"
-
-[[on-window-detected]]
-if.app-id = "com.apple.Music"
-run = "move-node-to-workspace Music"
+alt-shift-s = "mode service"
 
 [mode.service.binding]
 esc = ["reload-config", "mode main"]
