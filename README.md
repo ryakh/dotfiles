@@ -15,10 +15,12 @@ brew install nvim
 brew install rcm
 brew install zellij
 brew install --cask nikitabobko/tap/aerospace
-brew install font-departure-mono
+brew install borders
+brew install eza
+brew install zoxide
 
 brew tap homebrew/cask
-brew install --cask font-iosevka
+brew install --cask font-iosevka-nerd-font
 ```
 
 ## Installing

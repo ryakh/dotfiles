@@ -8,6 +8,6 @@ return {
     -- Visual apprance
     vim.opt.termguicolors = true
 
-    theme.load("wave")
+    theme.load("dragon")
   end
 }
